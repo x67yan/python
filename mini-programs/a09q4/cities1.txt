@@ -1,0 +1,35 @@
+6
+London
+Paris
+Tokyo
+New York
+Sao Paolo
+Cairo
+9
+London
+Paris
+100
+London
+New York
+400
+Paris
+London
+100
+New York
+London
+450
+New York
+Tokyo
+2500
+Tokyo
+Paris
+1500
+Cairo
+Sao Paolo
+2000
+Sao Paolo
+New York
+2000
+Paris
+Tokyo
+1000
