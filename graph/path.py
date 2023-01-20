@@ -1,11 +1,5 @@
-import check
-
-from a09q1 import Graph 
-# uncomment the following if needed
-# from a09q1 import equivalent
-# from a09q1 import circle_graph
-# from a09q1 import k_graph
-from a09q2 import read_cities
+import Graph
+import Read_to_Graph
 
 def is_path(g, lst):
     '''
@@ -34,15 +28,3 @@ def is_path(g, lst):
             return False
         pos += 1
     return True
-
-# Tests
-g = read_cities("cities.txt")
-check.expect("Q3T1", is_path(g, ["Sao Paolo", "New York", "London", "New York", 
-                                 "Tokyo"]), True)
-check.expect("Q3T2", is_path(g, ["Sao Paolo", "New York", "London", "New York", 
-                                 "Las Vegas"]), False)
-check.expect("Q3T3", is_path(g, ["Sao Paolo", "Las Vegas"]), False)
-check.expect("Q3T4", is_path(g, ["Sao Paolo", "New York", "London", "Tokyo"]),
-             False)
-
-        
