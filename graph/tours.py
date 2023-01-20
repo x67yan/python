@@ -66,10 +66,14 @@ def shortest_tour(cities):
         return path
     length = path_length(cities, path)
     for new_path in lst[1:]:
-        l_path = path_length(cities, new_path)
-        if l_path < length:
-            path = new_path
-            length = l_path
+        l_path = 0
+        pos_vertex = 0
+        pos_neighbour = 1        
+        for i in range(len(new_path) - 1):
+            l_path += cities.get_edge_data(new_path[pos_vertex],
+                                           new_path[pos_neighbour])
+            pos_vertex += 1
+            pos_neighbour += 1
+            if l_path > length:
+                break
     return path
-
-
