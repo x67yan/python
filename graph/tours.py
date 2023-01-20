@@ -1,13 +1,7 @@
 
-import check
-
-from a09q1 import Graph
-# uncomment the following if needed
-from a09q1 import equivalent
-from a09q1 import circle_graph
-from a09q1 import k_graph
-from a09q2 import read_cities
-# from a09q3 import is_path
+import graph
+import read_cities
+import path
 
 def paths_v(g,v):
     '''
@@ -81,30 +75,3 @@ def tours(g):
         return []
     return total_paths
             
-# Tests
-g = read_cities("cities1.txt")
-check.expect("Q4T1",
-             equivalent(tours(g), [["Cairo", "Sao Paolo", "New York", "London", 
-                                    "Paris", "Tokyo"],
-                                   ["Cairo", "Sao Paolo", "New York", "Tokyo",
-                                    "Paris", "London"]]), True)
-g = read_cities("two_cities1.txt")
-check.expect("Q4T2", equivalent(tours(g), [["London", "New York"],
-                                           ["New York", "London"]]), True)
-
-g = read_cities("multi_same_path.txt")
-check.expect("Q4T3", equivalent(tours(g), [["L", "M", "N"], ["M", "N", "L"],
-                                           ["N", "L", "M"]]), True)
-
-g = read_cities("empty.txt")
-check.expect("Q4T4", equivalent(tours(g), []), True)
-
-g = read_cities("one_node.txt")
-check.expect("Q4T5", equivalent(tours(g), []), True)
-
-g = read_cities("k_paths.txt")
-check.expect("Q4T6", equivalent(tours(g),
-                                [["L", "M", "N", "A"], ["M", "N", "A","L"],
-                                 ["N", "A", "L", "M"], ["A", "L", "M", "N"],
-                                 ["A", "M", "N", "L"]]), True)
-
