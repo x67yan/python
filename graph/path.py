@@ -63,45 +63,6 @@ def path_length(cities, path):
     return length
 
 
-def shortest_tour(cities):
-    '''
-    consumes a Graph (cities) and returns the tour of cities with the shortest
-    path length.  If there is no such tour, return []; if there are multiple
-    shortest tours, arbitrarily return one of the shortest tours.  See 
-    documentation of tours() for a definition of "tour" and "path".  
-    
-    shortest_tour: (graphof Str Nat) -> (listof Str)
-    
-    Example:
-    g = Graph()
-    g.add_vertex("a")
-    g.add_vertex("b")
-    g.add_vertex("c")
-    g.add_edge("a","b", 1)
-    g.add_edge("b","c", 2)
-    g.add_edge("c","a", 3)
-    g.add_edge("b","a", 4)
-    g.add_edge("c","b", 5)
-    g.add_edge("a","c", 6)
-    shortest_tour(g) => ["a","b","c"]
-    '''
-    empty = []
-    unique = 1
-    lst = tours(cities)
-    if lst == empty:
-        return empty
-    path = lst[0]
-    if len(lst) == unique:
-        return path
-    length = path_length(cities, path)
-    for new_path in lst[1:]:
-        l_path = path_length(cities, new_path)
-        if l_path < length:
-            path = new_path
-            length = l_path
-    return path
-
-
 def paths_v(g,v):
     '''
     returns paths starting from v in g
