@@ -1,5 +1,5 @@
-import Graph
-import Read_to_Graph
+import graph
+import read_to_graph
 
 def is_path(g, lst):
     '''
