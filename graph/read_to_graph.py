@@ -1,4 +1,4 @@
-import graph_class
+import graph
 
 def read_cities(filename):
     '''
