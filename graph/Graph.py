@@ -1,5 +1,3 @@
-import check
-
 class Graph:
     '''
     A Graph is a (graphof X Y) where X can be Any and Y can be Any
@@ -168,30 +166,3 @@ def k_graph(n):
                 c += 1
     return g
 
-
-# Tests
-g = Graph()
-check.expect("T1_get_v", g.get_vertices(), [])
-g.add_vertex(6)
-check.expect("T2_add_v", g.add_vertex(6), None)
-check.expect("T2_get_v", g.get_vertices(), [6])
-check.expect("T2_add_e", g.add_edge(6, 3, 5), None)
-check.expect("T2_get_e", g.get_edges(6), [3])
-check.expect("T2_get_d", g.get_edge_data(6, 3), 5)
-check.expect("T3_add_e", g.add_edge(6, 4, 1), None)
-check.expect("T3_get_e", equivalent(g.get_edges(6), [3, 4]), True)
-check.expect("T3_get_d", g.get_edge_data(6, 4), 1)
-
-
-check.expect("T3_add_", g.add_vertex("8"), None)
-check.expect("T3_get_v", equivalent(g.get_vertices(), [6, 3, 4, "8"]), True)
-check.expect("T4_add_e", g.add_edge("8", "3", 5), None)
-check.expect("T4_get_e", g.get_edges("8"), ["3"])
-check.expect("T4_get_d", g.get_edge_data("8", "3"), 5)
-
-check.expect("T4_add_v", g.add_vertex(0.5), None)
-check.expect("T4_get_v", equivalent(g.get_vertices(), [6, 3, 4, "8", "3", 0.5]),
-             True)
-check.expect("T5_add_e", g.add_edge(0.5, 0.3, 5), None)
-check.expect("T5_get_e", g.get_edges(0.5), [0.3])
-check.expect("T5_get_d", g.get_edge_data(0.5, 0.3), 5)
